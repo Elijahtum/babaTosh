@@ -3,6 +3,13 @@
 let welcome = `Hi!\nwelcome to BABA TOSH SHOP`;
 console.log(welcome);
 
+//Login Options
+function login(admin, customer){
+    let admin= "babaTosh";
+    let customer = "Customer";
+
+}
+
 //User input 
 const prompt = require('prompt');
 
@@ -23,7 +30,7 @@ prompt.start();
 prompt.get(properties, function (err, result) {
     if (err) { return onErr(err); }
     // console.log('Command-line input received:');
-    console.log('Welcome ' + result.username + ' To Baba Tosh Shop.');
+    console.log('login Successfull! \nWelcome ' + result.username + ' To Baba Tosh Shop.');
     // console.log('  Password: ' + result.password);
 });
 

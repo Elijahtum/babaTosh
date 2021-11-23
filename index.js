@@ -27,16 +27,16 @@ const options = {
     },
   };
 
-  const admin = {
+  const logIn = {
     properties: {
       userName: {
         validator: /^[a-zA-Z\s\-]+$/,
         warning: 'Username must be only letters, spaces, or dashes',
-        required: true,
+        required: true
       },
       password: {
           hiden: true,
-          replace: '*',
+          replace: '*'
       }
     },
   };
@@ -62,7 +62,7 @@ prompt.get(options, function (err, result) {
     console.log(result.option)
     if (result.option === 1) {
         console.log(`Please enter your Admin Details to Log-In`)
-        prompt.get(admin, function (err, result){
+        prompt.get(logIn, function (err, result){
         console.log(`Hello, ${result.userName} what would you like to Do?
         1) Stock Taking
         2) Accounting 
@@ -78,7 +78,9 @@ prompt.get(options, function (err, result) {
                 console.log(`We would love to set you up in the system
                 please enter your details`)
             }
-            prompt.get(admin)
+            prompt.get(logIn, function (err, result){
+                console.log(`Hello, ${result.userName} your logIn was sucessfull!!`)
+            })
         })
     }
 });

@@ -35,7 +35,7 @@ const options = {
         required: true
       },
       password: {
-          hiden: true,
+          hidden: true,
           replace: '*'
       }
     },
@@ -49,7 +49,7 @@ const options = {
         required: true,
       },
       password: {
-          hiden: true,
+          hidden: true,
           replace: '*',
       }
     },
@@ -78,8 +78,14 @@ prompt.get(options, function (err, result) {
                 console.log(`We would love to set you up in the system
                 please enter your details`)
             }
+            if (result.option === 2) {
+                console.log(`Thank you for returning to our Shop.
+                please logIn`)
+            }
             prompt.get(logIn, function (err, result){
-                console.log(`Hello, ${result.userName} your logIn was sucessfull!!`)
+                console.log(`Hello, ${result.userName} your logIn was sucessfull!!
+                1) To Shop
+                2) To view Balance`)
             })
         })
     }
@@ -89,5 +95,3 @@ function onErr(err) {
     console.log(err);
     return 1;
 }
-
-

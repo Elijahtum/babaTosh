@@ -4,8 +4,8 @@ let welcome = `Hi!\nwelcome to BABA TOSH SHOP`;
 console.log(welcome);
 
 console.log(`please select Account to log-In!!
-select 1 to login as admin 
-select 2 to login as customer`)
+Type: (1) to login as admin 
+Type: (2) to login as customer`)
 
 
 //Login Options
@@ -18,11 +18,11 @@ const prompt = require('prompt');
 const options = {
     properties: {
       option: {
-        description: "Option",
+        description: "Answer",
         name: "number",
         type: "number",
         message: "Option must be a valid number",
-        required: true,
+        required: true
       },
     },
   };
@@ -45,17 +45,17 @@ const options = {
     properties: {
       userName: {
         validator: /^[a-zA-Z\s\-]+$/,
-        warning: 'Username must be only letters, spaces, or dashes',
+        warning: 'Username must be only letters, with spaces, or dashes.',
         required: true,
       },
       password: {
           hidden: true,
-          replace: '*',
+          replace: '*'
       }
     },
   };
 
-prompt.start();
+// prompt.start();
 
 prompt.get(options, function (err, result) {
     if (err) { return onErr(err); }
@@ -78,7 +78,7 @@ prompt.get(options, function (err, result) {
                 console.log(`We would love to set you up in the system
                 please enter your details`)
             }
-            if (result.option === 2) {
+            else if (result.option === 2) {
                 console.log(`Thank you for returning to our Shop.
                 please logIn`)
             }
